@@ -18,16 +18,5 @@ public class SpringbootBackendApplication implements CommandLineRunner {
 	EmployeeRepository employeeRepository;
 	@Override
 	public void run(String... args) throws Exception {
-//		Employee employee = new Employee();
-//		employee.setFirstName("Santiago");
-//		employee.setLastName("Franco");
-//		employee.setEmailId("Santaigo.Franco@gmail.com");
-//		employeeRepository.save(employee);
-//
-//		Employee employee1 = new Employee();
-//		employee1.setFirstName("Mishell");
-//		employee1.setLastName("Ayala");
-//		employee1.setEmailId("Mishell.Ayala@gmail.com");
-//		employeeRepository.save(employee1);
 	}
 }

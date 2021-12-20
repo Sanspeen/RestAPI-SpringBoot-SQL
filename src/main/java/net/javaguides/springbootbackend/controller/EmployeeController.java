@@ -43,15 +43,30 @@ public class EmployeeController {
         updateEmployee.setFirstName(employeeDetails.getFirstName());
         updateEmployee.setLastName(employeeDetails.getLastName());
         updateEmployee.setEmailId(employeeDetails.getEmailId());
+        updateEmployee.setSalary(employeeDetails.getSalary());
 
         employeeRepository.save(updateEmployee);
 
         return ResponseEntity.ok(updateEmployee);
     }
 
+    @PutMapping("salary-reduction/{id}")
+    public Double updateEmployeeSalary(@PathVariable Long id, @RequestBody Employee employeeSalaryReduction){
+
+        Employee updateEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+
+        employeeSalaryReduction.setSalary(updateEmployee.getSalary() - employeeSalaryReduction.getSalary());
+        updateEmployee.setSalary(employeeSalaryReduction.getSalary());
+
+        employeeRepository.save(updateEmployee);
+
+        return updateEmployee.getSalary();
+    }
+
     @DeleteMapping("{id}")
     public void deleteEmployeeById(@PathVariable Long id){
-                employeeRepository.deleteById(id)   ;
+                employeeRepository.deleteById(id);
     }
 
 }

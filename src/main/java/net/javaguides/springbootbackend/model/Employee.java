@@ -23,6 +23,8 @@ public class Employee {
     private String lastName;
     @Column(name = "email_id")
     private String emailId;
+    @Column(name = "salary")
+    private Double salary;
 
 }
 
