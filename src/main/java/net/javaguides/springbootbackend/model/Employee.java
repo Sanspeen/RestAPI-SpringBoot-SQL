@@ -25,6 +25,8 @@ public class Employee {
     private String emailId;
     @Column(name = "salary")
     private Double salary;
+    @Column(name = "jobId")
+    private Long jobId;
 
 }
 
